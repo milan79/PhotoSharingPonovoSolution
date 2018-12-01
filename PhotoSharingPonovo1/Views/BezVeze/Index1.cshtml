@@ -1,0 +1,14 @@
+﻿@*@model List<string>*@
+@{
+    ViewBag.Title = "Index1";
+}
+
+<h2>Index1</h2>
+
+<p>
+    @Html.Action("Vrati1", "BezVeze", new { ime = new List<string>() { "broj", "cipela" } })
+    @Html.ActionLink("Klikni", "Vrati1", new { ime = new List<string>() { "broj", "cipela"} }) @*//ovde nece da vrati listu*@
+    @Html.Action("Vrati2", "BezVeze")
+    @Html.ActionLink("klikni2", "Vrati2")
+</p>
+

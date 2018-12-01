@@ -1,0 +1,32 @@
+﻿@model PhotoSharingPonovo1.Models.Photo
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalji</h2>
+
+<p>
+    @Html.DisplayNameFor(Model=>Model.Title)
+    @Html.DisplayFor(Model=>Model.Title)
+</p>
+<p>
+    <img src="@Url.Action("GetImage", "Photo", new { id = Model.PhotoID })" width="200"/>
+</p>
+<p>
+    @Html.DisplayNameFor(Model=>Model.CreatedDate)
+    @Html.DisplayFor(Model=>Model.CreatedDate)
+</p>
+<p>
+    @Html.DisplayNameFor(Model=>Model.UserName)
+    @Html.DisplayFor(Model=>Model.UserName)
+</p>
+<p>
+    @Html.DisplayNameFor(Model=>Model.Description)
+    @Html.DisplayFor(Model=>Model.Description)
+</p>
+<p>
+    @Html.ActionLink("povratak na Index", "Index", "Photo")
+</p>
+<p>
+    @Html.Action("CommentsForPhoto", "Comment", new { id=Model.PhotoID})
+</p>

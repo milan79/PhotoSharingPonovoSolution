@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Login</h2>
+@using (Html.BeginForm("Logovanje", "Login", FormMethod.Post))
+{
+<div>
+    <table border="1" style="text-align:center">
+        <tr>
+            <td colspan="2">
+                Logovanje
+            </td>
+            </tr>
+        <tr>
+            <td>
+                ime:
+            </td>
+            <td>
+                <input type="text" name="ime" width="200" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                password:
+            </td>
+            <td>
+                <input type="password" name="password" width="200" />
+            </td>
+        </tr>
+    </table>
+    <p>
+        <input type="submit" value="LogIn"
+    </p>
+</div>
+}
+

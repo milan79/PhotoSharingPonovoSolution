@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "Index3";
+}
+
+<h2>Index3</h2>
+@using (Html.BeginForm("Vrati3", "BezVeze", FormMethod.Post))
+{
+    @Html.AntiForgeryToken();
+<div>
+    <table border="1">
+        <tr>
+            <td>
+                prvo ime:
+            </td>
+            <td>
+                <input type="text" name="ime1" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                drugo ime:
+            </td>
+            <td>
+                <input type="text"name="ime2" />
+            </td>
+        </tr>
+        <input type="submit"value="potvrdi" />
+    </table>
+</div>
+}
+

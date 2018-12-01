@@ -1,0 +1,13 @@
+﻿@model IEnumerable<PhotoSharingPonovo1.Models.Photo>
+
+@{
+    ViewBag.Title = "DisplayByName";
+}
+
+<h2>DisplayByName</h2>
+
+@foreach(var item in Model)
+{
+    <img src="@Url.Action("GetImage", "Photo", new {id=item.PhotoID})" width="225" />
+}
+

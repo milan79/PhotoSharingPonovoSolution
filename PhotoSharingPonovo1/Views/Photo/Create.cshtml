@@ -1,0 +1,30 @@
+﻿@model PhotoSharingPonovo1.Models.Photo
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Krejiraj</h2>
+@using (Html.BeginForm("Create", "Photo", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary()
+    @Html.AntiForgeryToken()
+    <p>
+        @Html.DisplayNameFor(Model => Model.Title)
+        @Html.EditorFor(Model => Model.Title)
+        @Html.ValidationMessageFor(Model => Model.Title)
+    </p>
+    <p>
+        @Html.DisplayNameFor(Model => Model.UserName)
+        @Html.EditorFor(Model => Model.UserName)
+        @Html.ValidationMessageFor(Model => Model.UserName)
+    </p>
+    <p>
+        @Html.DisplayNameFor(Model => Model.Description)
+        @Html.EditorFor(Model => Model.Description)
+    </p>
+    <p>
+        <input type="file" name="image" />   @*//OVDE JE MNOGO VAZNO NAME=IMAGE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*@
+        <input type="submit" value="prosledi" />
+    </p>
+}
+

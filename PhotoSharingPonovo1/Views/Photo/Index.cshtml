@@ -1,0 +1,67 @@
+﻿@model IEnumerable<PhotoSharingPonovo1.Models.Photo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div>
+    <table>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.ImageMimeType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.CreatedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.PhotoFile)
+            </th>
+            <th>
+                @Html.Label("Razno");
+            </th>
+        </tr>
+        @foreach(var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(Model => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => item.ImageMimeType)
+            </td>
+            <td>
+                @Html.DisplayFor(Model => item.CreatedDate)
+            </td>
+            <td>
+                <a href="@Url.Action("Details", "Photo", new { id = item.PhotoID })"><img src="@Url.Action("GetImage", "Photo", new { id = item.PhotoID })" width="50" alt="nema slike" /></a>
+            </td>
+            <td>
+                @Html.ActionLink("Obrisi", "Delete", new { id = item.PhotoID })
+            </td>
+        </tr>
+        <tr>
+            <p>
+                @Html.Action("CommentsForPhoto", "Comment", new { id = item.PhotoID })         
+            </p>
+        </tr>
+        }
+    </table>
+    <p>
+        @Html.ActionLink("Krejiraj", "Create", "Photo")
+    </p>
+    <p>
+        @Html.Action("_PhotoGallery", "Photo", new { broj = 2 })
+    </p>
+</div>
+

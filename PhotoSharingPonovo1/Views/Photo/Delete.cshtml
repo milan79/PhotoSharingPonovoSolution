@@ -1,0 +1,16 @@
+﻿@model PhotoSharingPonovo1.Models.Photo
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Obrisi</h2>
+
+
+@using (Html.BeginForm("Delete", "Photo", FormMethod.Post))
+{
+    <p>
+        <img src="@Url.Action("GetImage", "Photo", new { id = Model.PhotoID })" width="30" />
+    </p>
+    <input type="submit" value="obrisi" />
+}
+

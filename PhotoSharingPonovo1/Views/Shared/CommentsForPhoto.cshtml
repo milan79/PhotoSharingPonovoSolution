@@ -1,0 +1,31 @@
+﻿@model IEnumerable<PhotoSharingPonovo1.Models.Comment>
+
+<h2>komentari za slike, parcijalni</h2>
+
+<div>
+    <table border="1">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(Model => Model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Subject)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Model => Model.Body)
+            </th>
+        </tr>
+        @foreach (var item in Model)
+    {
+        <tr>
+            @Html.DisplayFor(Model => item.UserName)
+        </tr>
+        <tr>
+            @Html.DisplayFor(Model => item.Subject)
+        </tr>
+        <tr>
+            @Html.DisplayFor(Model => item.Body)
+        </tr>
+}
+    </table>
+</div>
